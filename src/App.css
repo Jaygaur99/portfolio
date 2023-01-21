@@ -5,16 +5,6 @@
 :root {
   --header-height: 3rem;
 
-  /*========== Colors ==========*/
-  /*Color mode HSL(hue, saturation, lightness)*/
-  --hue: 0;
-  --sat: 0%;
-  --title-color: hsl(var(--hue), var(--sat), 20%);
-  --title-color-dark: hsl(var(--hue), var(--sat), 0%);
-  --text-color: hsl(var(--hue), var(--sat), 46%);
-  --body-color: hsl(var(--hue), var(--sat), 98%);
-  --container-color: #fff;
-
   /*========== Font and typography ==========*/
   --body-font: "Poppins", sans-serif;
 
@@ -50,6 +40,33 @@
   --z-modal: 1000;
 }
 
+#light {
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --hue: 0;
+  --sat: 0%;
+  --title-color: hsl(var(--hue), var(--sat), 20%);
+  --title-color-dark: hsl(var(--hue), var(--sat), 0%);
+  --text-color: hsl(var(--hue), var(--sat), 46%);
+  --body-color: hsl(var(--hue), var(--sat), 98%);
+  --container-color: #fff;
+  background-color: var(--body-color);
+  background: var(--body-color);
+  color: var(--text-color);
+  transition: 0.5s;
+}
+
+#dark {
+  --title-color: #F0EDE1;
+  --title-color-dark: #e0eff2;
+  --text-color: #eeeeee;
+  --body-color: #252531;
+  --container-color: #37393E;
+  background-color: #1f1f20;
+  color: var(--text-color);
+  transition: 0.5s;
+}
+
 /* Responsive typography */
 @media screen and (max-width: 992px) {
   :root {
@@ -82,10 +99,9 @@ textarea {
   font-size: var(--normal-font-size);
 }
 
-body {
-  background-color: var(--body-color);
-  color: var(--text-color);
-}
+/* body {
+  
+} */
 
 h1,
 h2,

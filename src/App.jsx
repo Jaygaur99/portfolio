@@ -1,3 +1,5 @@
+import { useContext } from "react";
+import ThemeContext from "./context/ThemeContext";
 import "./App.css";
 import Header from "./components/header/Header";
 import Home from "./components/home/Home";
@@ -9,8 +11,9 @@ import Footer from "./components/footer/Footer";
 import ScrollUp from "./components/scrollUp/ScrollUp";
 
 function App() {
+  const { theme } = useContext(ThemeContext);
   return (
-    <>
+    <div id={theme}>
       <Header />
       <main className="main">
         <Home />
@@ -21,7 +24,7 @@ function App() {
         <Footer />
       </main>
       <ScrollUp />
-    </>
+    </div>
   );
 }
 

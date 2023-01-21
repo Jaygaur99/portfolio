@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import "./header.css";
 import { projectsRepo } from "../../data/data";
+import { useContext } from "react";
+import ThemeContext from "../../context/ThemeContext";
 
 const Header = () => {
+  const { theme, toggleTheme } = useContext(ThemeContext);
+
   window.addEventListener("scroll", function () {
     const scrollUp = document.querySelector(".header");
     if (this.scrollY >= 80) scrollUp.classList.add("scroll-header");
@@ -38,13 +42,6 @@ const Header = () => {
             </li>
 
             <li className="nav__item">
-              <a href="#qualification" className="nav__link">
-                <i className="uil uil-briefcase-alt nav__icon"></i>{" "}
-                Qualifications
-              </a>
-            </li>
-
-            <li className="nav__item">
               <a href={projectsRepo} className="nav__link">
                 <i className="uil uil-scenery nav__icon"></i> Projects
               </a>
@@ -55,6 +52,26 @@ const Header = () => {
                 <i className="uil uil-message nav__icon"></i> Contact
               </a>
             </li>
+
+            <li className="nav__item" onClick={toggleTheme}>
+              <a href="#" className="nav__link">
+                {theme === "light" ? (
+                  <i class="bx bx-moon toggle__icon"></i>
+                ) : (
+                  <i class="bx bx-sun toggle__icon"></i>
+                )}
+              </a>
+            </li>
+
+            {/* <li className="nav__item" onClick={toggleTheme}>
+              <button className="nav__link">
+                {theme === "light" ? (
+                  <i class="bx bx-moon toggle__icon"></i>
+                ) : (
+                  <i class="bx bx-sun toggle__icon"></i>
+                )}
+              </button>
+            </li> */}
           </ul>
 
           <i
