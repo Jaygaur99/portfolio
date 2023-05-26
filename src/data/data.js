@@ -96,6 +96,10 @@ export const skills = {
         name: "SQL",
         level: "Basic",
       },
+      {
+        name: "Firebase",
+        level: "Basic"
+      }
     ],
   ],
 };
